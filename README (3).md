@@ -76,78 +76,49 @@ Employee attrition is one of the most critical challenges for organizations. Thi
 ## 📊 Dashboard Preview
 
 ### 1️⃣ Executive Overview
+> High-level KPIs and workforce summary — Total Employees, Attrition Rate, Avg Salary, Age Distribution, Gender Split.
 
-> High-level KPIs and workforce summary at a glance.
-
-**KPIs Tracked:**
-- Total Employees
-- Attrition Count & Rate
-- Average Salary
-- Average Employee Age
-
-**Visuals:**
-- Department-wise Attrition
-- Gender Distribution
-- Age Group Analysis
-- Interactive Filters & Slicers
+![Overview Dashboard](screenshots/01_Overview_Dashboard.png)
 
 ---
 
 ### 2️⃣ Employee Attrition Analysis
+> Deep-dive into attrition across departments, job roles, gender, education field, and overtime impact.
 
-> Deep-dive into attrition patterns across multiple dimensions.
-
-**Analysis Areas:**
-- Attrition by Department
-- Attrition by Job Role
-- Attrition by Gender
-- Attrition by Education Field
-- Overtime vs Attrition Impact
+![Attrition Analysis](screenshots/02_Attrition_Analysis.png)
 
 ---
 
 ### 3️⃣ Workforce & Salary Insights
+> Compensation benchmarks and workforce distribution by department, job role, age group, and tenure.
 
-> Compensation and workforce distribution analysis.
-
-**Analysis Areas:**
-- Salary by Department & Job Role
-- Workforce Distribution
-- Age Group Breakdown
-- Years at Company Trends
+![Workforce Insights](screenshots/03_Workforce_Insights.png)
 
 ---
 
 ## 🧮 SQL Analysis
 
-Business-focused SQL queries were written to support and validate dashboard findings.
+Business-focused SQL queries written to support and validate all dashboard findings.
 
-**Queries Included:**
+### KPI Summary
+![KPI Summary](screenshots/01_KPI_Summary.png)
 
-```sql
--- Sample: Attrition Rate by Department
-SELECT Department,
-       COUNT(*) AS Total_Employees,
-       SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) AS Attrition_Count,
-       ROUND(SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS Attrition_Rate
-FROM hr_data
-GROUP BY Department
-ORDER BY Attrition_Rate DESC;
-```
+### Department-wise Attrition
+![Department Attrition](screenshots/02_Department_Attrition.png)
 
-**Full Query Coverage:**
+### Gender-wise Attrition
+![Gender Attrition](screenshots/03_Gender_Attrition.png)
 
-| Query | Description |
-|-------|-------------|
-| `Total Employee Count` | Overall headcount |
-| `Attrition Count & Rate` | Company-wide attrition KPIs |
-| `Department-wise Attrition` | Turnover by department |
-| `Gender-wise Attrition` | Attrition split by gender |
-| `Avg Salary by Department` | Compensation benchmarks |
-| `Job Role Analysis` | Role-level attrition trends |
-| `Overtime Impact` | Overtime vs attrition correlation |
+### Average Salary by Department
+![Avg Salary](screenshots/04_Avg_Salary_Department.png)
 
-📁 Full SQL file: [`ANALYSIS.sql`](./ANALYSIS.sql)
+### Job Role Attrition Analysis
+![Job Role Attrition](screenshots/05_JobRole_Attrition.png)
+
+### Overtime vs Attrition
+![Overtime Attrition](screenshots/06_Overtime_Attrition.png)
+
+**Full SQL file:** [`ANALYSIS.sql`](./ANALYSIS.sql)
 
 ---
 
@@ -176,12 +147,15 @@ ORDER BY Attrition_Rate DESC;
 ```
 HR-Analytics-Dashboard/
 │
-├── 📄 HR_ANALYSIS_ORIGINAL.csv       # Raw dataset
-├── 📄 HR_ANALYSIS_CLEAN.csv          # Cleaned dataset
+├── 📄 HR_ANALYSIS_ORIGINAL.csv
+├── 📄 HR_ANALYSIS_CLEAN.csv
 │
-├── 🧮 ANALYSIS.sql                   # All SQL queries
+├── 🧮 ANALYSIS.sql
 │
-├── 📸 SQL Output Screenshots/
+├── 📸 screenshots/
+│   ├── 01_Overview_Dashboard.png
+│   ├── 02_Attrition_Analysis.png
+│   ├── 03_Workforce_Insights.png
 │   ├── 01_KPI_Summary.png
 │   ├── 02_Department_Attrition.png
 │   ├── 03_Gender_Attrition.png
@@ -189,12 +163,7 @@ HR-Analytics-Dashboard/
 │   ├── 05_JobRole_Attrition.png
 │   └── 06_Overtime_Attrition.png
 │
-├── 📸 Dashboard Screenshots/
-│   ├── 01_Overview_Dashboard.png
-│   ├── 02_Attrition_Analysis.png
-│   └── 03_Workforce_Insights.png
-│
-├── 📊 HR_Analytics.pbix              # Power BI file
+├── 📊 HR_Analytics.pbix
 │
 └── 📝 README.md
 ```
@@ -206,7 +175,9 @@ HR-Analytics-Dashboard/
 <div align="center">
 
 `SQL Query Writing` &nbsp;|&nbsp; `Data Cleaning & Transformation` &nbsp;|&nbsp; `Data Analysis`
+
 `Business Intelligence` &nbsp;|&nbsp; `Dashboard Design` &nbsp;|&nbsp; `Data Visualization`
+
 `DAX Measures` &nbsp;|&nbsp; `KPI Development` &nbsp;|&nbsp; `Workforce Analytics` &nbsp;|&nbsp; `Data Storytelling`
 
 </div>
@@ -222,8 +193,6 @@ The solution enables HR teams to:
 - 👥 Analyze workforce demographics
 - 💰 Evaluate salary and compensation patterns
 - 🧭 Support strategic workforce planning
-
-All through interactive dashboards and data-driven decision making.
 
 ---
 
